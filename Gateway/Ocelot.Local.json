@@ -1,0 +1,22 @@
+﻿{
+  "Routes": [
+
+    //Basket API
+    {
+      "DownstreamPathTemplate": "/account/passwordReset/{mail}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5001"
+        }
+      ],
+      "UpstreamPathTemplate": "/test/{mail}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "DangerousAcceptAnyServerCertificateValidator": true
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:7000"
+  }
+}
