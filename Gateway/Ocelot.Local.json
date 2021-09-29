@@ -3,7 +3,7 @@
 
     //Basket API
     {
-      "DownstreamPathTemplate": "/account/passwordReset/{mail}",
+      "DownstreamPathTemplate": "/login/login/{userName}/{password}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -11,7 +11,20 @@
           "Port": "5001"
         }
       ],
-      "UpstreamPathTemplate": "/test/{mail}",
+      "UpstreamPathTemplate": "/login/{userName}/{password}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "DangerousAcceptAnyServerCertificateValidator": true
+    },
+    {
+      "DownstreamPathTemplate": "/register/register/{userName}/{password}/{mail}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5001"
+        }
+      ],
+      "UpstreamPathTemplate": "/register/{userName}/{password}/{mail}",
       "UpstreamHttpMethod": [ "GET", "DELETE" ],
       "DangerousAcceptAnyServerCertificateValidator": true
     }
