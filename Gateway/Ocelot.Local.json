@@ -1,14 +1,12 @@
 ﻿{
   "Routes": [
-
-    //Basket API
     {
       "DownstreamPathTemplate": "/login/login/{userName}/{password}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "5001"
+          "Port": "5003"
         }
       ],
       "UpstreamPathTemplate": "/login/{userName}/{password}",
@@ -21,7 +19,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "5001"
+          "Port": "5003"
         }
       ],
       "UpstreamPathTemplate": "/register/{userName}/{password}/{mail}",
