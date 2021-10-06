@@ -27,7 +27,7 @@ namespace Gateway
                         builder.AllowAnyOrigin();
                     });
             });
-            Console.WriteLine("temrpt");
+            Console.WriteLine("tetmrpt");
             services.AddOcelot();
         }
 
