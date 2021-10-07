@@ -40,6 +40,6 @@ jobs:
           run: docker push Flexicon420/gateway:${{steps.vars.outputs.tag}}
         - name: Build the latest Docker image
           run: docker build . --file Dockerfile --tag Flexicon420/gateway:latest
-        - name: Push the latest Docker image
+        - name: Push the lates Docker image
           run: docker push Flexicon420/gateway:latest
     
