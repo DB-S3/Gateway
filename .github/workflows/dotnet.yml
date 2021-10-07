@@ -46,8 +46,8 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: ./
-          file: ./Gateway/Dockerfile
+          context: ./Gateway/
+          file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/gateway-ortisy:latest
 
