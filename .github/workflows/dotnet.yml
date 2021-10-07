@@ -30,7 +30,7 @@ jobs:
     steps:
         - uses: actions/checkout@v1
         - name: Login to DockerHub Registry
-          run: echo ${{ "Flexicon420" }} | docker login -u ${{ "falstaff24" }} --password-stdin
+          run: echo ${{ Flexicon420 }} | docker login -u ${{ falstaff24 }} --password-stdin
         - name: Get the version
           id: vars
           run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
