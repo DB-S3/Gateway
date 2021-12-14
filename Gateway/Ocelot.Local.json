@@ -1,31 +1,97 @@
 ﻿{
   "Routes": [
     {
-      "DownstreamPathTemplate": "/login/login/{userName}/{password}",
-      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/page/AddPage/{name}",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "5003"
+          "Port": "5005"
         }
       ],
-      "UpstreamPathTemplate": "/login/{userName}/{password}",
+      "UpstreamPathTemplate": "/api/AddPage/{name}",
       "UpstreamHttpMethod": [ "GET", "DELETE" ],
       "DangerousAcceptAnyServerCertificateValidator": true
     },
     {
-      "DownstreamPathTemplate": "/register/register/{userName}/{password}/{mail}",
-      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/page/GetPageList",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "5003"
+          "Port": "5005"
         }
       ],
-      "UpstreamPathTemplate": "/register/{userName}/{password}/{mail}",
+      "UpstreamPathTemplate": "/api/GetPageList",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "DangerousAcceptAnyServerCertificateValidator": true
+    },
+    {
+      "DownstreamPathTemplate": "/page/RenamePage/{name}/{pageId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5005"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/RenamePage/{name}/{pageId}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "DangerousAcceptAnyServerCertificateValidator": true
+    },
+    {
+      "DownstreamPathTemplate": "/page/viewpage/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5005"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/viewpage/{id}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "DangerousAcceptAnyServerCertificateValidator": true
+    },
+    {
+      "DownstreamPathTemplate": "/page/ChangePage",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5005"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/ChangePage",
+      "UpstreamHttpMethod": [ "POST", "DELETE" ],
+      "DangerousAcceptAnyServerCertificateValidator": true
+    },
+    {
+      "DownstreamPathTemplate": "/website/CreateWebsite/{url}/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5005"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/CreateWebsite/{url}/",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "DangerousAcceptAnyServerCertificateValidator": true
+    },
+    {
+      "DownstreamPathTemplate": "/File/GetImage/{id}/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5000"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/GetImage/{id}/",
       "UpstreamHttpMethod": [ "GET", "DELETE" ],
       "DangerousAcceptAnyServerCertificateValidator": true
     }
+
   ],
   "GlobalConfiguration": {
     "BaseUrl": "http://localhost:7000"
