@@ -42,7 +42,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: ./Gateway/
-        file: ./Dockerfile
+        file: ./Gateway/Dockerfile
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/gateway-ortisy:latest
 
