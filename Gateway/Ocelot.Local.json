@@ -2,11 +2,11 @@
   "Routes": [
     {
       "DownstreamPathTemplate": "/page/AddPage/{name}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "5005"
+          "Host": "ortisy.azurewebsites.net/",
+          "port": "443"
         }
       ],
       "UpstreamPathTemplate": "/api/AddPage/{name}",
@@ -15,11 +15,11 @@
     },
     {
       "DownstreamPathTemplate": "/page/GetPageList",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "5005"
+          "Host": "ortisy.azurewebsites.net/",
+          "port": "443"
         }
       ],
       "UpstreamPathTemplate": "/api/GetPageList",
@@ -28,11 +28,11 @@
     },
     {
       "DownstreamPathTemplate": "/page/RenamePage/{name}/{pageId}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "5005"
+          "Host": "ortisy.azurewebsites.net/",
+          "port": "443"
         }
       ],
       "UpstreamPathTemplate": "/api/RenamePage/{name}/{pageId}",
@@ -41,11 +41,11 @@
     },
     {
       "DownstreamPathTemplate": "/page/viewpage/{id}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "5005"
+          "Host": "ortisy.azurewebsites.net/",
+          "port": "443"
         }
       ],
       "UpstreamPathTemplate": "/api/viewpage/{id}",
@@ -54,11 +54,11 @@
     },
     {
       "DownstreamPathTemplate": "/page/ChangePage",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "5005"
+          "Host": "ortisy.azurewebsites.net/",
+          "port": "443"
         }
       ],
       "UpstreamPathTemplate": "/api/ChangePage",
@@ -67,11 +67,11 @@
     },
     {
       "DownstreamPathTemplate": "/website/CreateWebsite/{url}/",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "5005"
+          "Host": "ortisy.azurewebsites.net/",
+          "port": "443"
         }
       ],
       "UpstreamPathTemplate": "/api/CreateWebsite/{url}/",
@@ -80,14 +80,27 @@
     },
     {
       "DownstreamPathTemplate": "/File/GetImage/{id}/",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "5000"
+          "Host": "ortisy-image.azurewebsites.net/",
+          "port": "443"
         }
       ],
       "UpstreamPathTemplate": "/api/GetImage/{id}/",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "DangerousAcceptAnyServerCertificateValidator": true
+    },
+    {
+      "DownstreamPathTemplate": "/site/ViewPage/{_siteName}/{_pageName}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ortisy-viewsite.azurewebsites.net/",
+          "port": "443"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Viewsite/{_siteName}/{_pageName}",
       "UpstreamHttpMethod": [ "GET", "DELETE" ],
       "DangerousAcceptAnyServerCertificateValidator": true
     }
