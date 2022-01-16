@@ -21,7 +21,12 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
-
+      
+  publish:
+    needs: build
+    name: publish
+    runs-on: ubuntu-latest
+    steps:
     - name: Check Out Repos 
       uses: actions/checkout@v2
 
@@ -44,7 +49,4 @@ jobs:
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/gateway-ortisy:latest
 
-    - name: Image digest
-      run: echo ${{ steps.docker_build.outputs.digest }}
- 
     
