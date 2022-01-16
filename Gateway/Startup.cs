@@ -24,7 +24,7 @@ namespace Gateway
                 options.AddPolicy("CorsPolicy",
                     builder =>
                     {
-                        builder.AllowAnyOrigin();
+                        builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
                     });
             });
             Console.WriteLine("tettdmtrtvpt");
